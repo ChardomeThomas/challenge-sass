@@ -1,0 +1,14 @@
+$font : "Space Mono", monospace;
+$grey: #6b717f;
+$lightgrey: #8C8C8C;
+$white: #fff;
+$green:green;
+$red:red;
+$orange:orange;
+$pink:#BF4080;
+$black:#000;
+$paddingm: 0 1em;
+$padding:16px;
+$paddingH3: $padding *2;
+$BoxShadow: 10px 10px 15px -4px;
+$BaseBackground: green;

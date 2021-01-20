@@ -1,0 +1,120 @@
+@import "_Variables";
+@mixin Box($BoxShadow) {
+  -webkit-box-shadow: $BoxShadow $grey;
+  -moz-box-shadow: $BoxShadow $grey;
+  box-shadow: $BoxShadow $grey;
+}
+%alert{
+  border: 1px solid $lightgrey;
+  padding: $padding;
+  color: $white;
+}
+
+@for $i from 1 through 6 {
+  li:nth-child(#{$i}) {
+    background-color: darken($BaseBackground, $i * 4%);
+    color: lighten($BaseBackground, $i * 4%);
+  }
+}
+
+
+  body {
+    font: 100% $font;
+    color: $grey;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  main {
+    padding:$paddingm;
+  }
+
+  article {
+    display: flex;
+    flex-wrap: wrap;
+
+
+    section {
+      flex-grow: 1;
+      flex-basis: 45%;
+      border: 1px $lightgrey solid;
+      @include Box($BoxShadow);
+      padding: $padding;
+      margin: $padding;
+      clear: both;
+      overflow: auto;
+      box-sizing: border-box;
+
+
+      #selling-points {
+        flex-grow: 2;
+        flex-basis: 100%;
+      }
+
+      code {
+        background: $black;
+        border: 1px solid $grey;
+        color: $lightgrey;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1em 1.5em;
+        display: block;
+        word-wrap: break-word;
+
+
+        .before {
+          float: left;
+          width: 40%;
+        }
+
+        .after {
+          float: right;
+          width: 40%;
+        }
+      }
+
+    }
+  }
+  h1, h2, h3 {
+    color: $pink;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 1.5em;
+    padding: $paddingH3;
+    margin-bottom: 0px;
+  }
+
+  .messages {
+    padding: $padding;
+  }
+
+  .success, .error, .warning {
+    @extend %alert;
+  }
+
+  .success {
+    background-color: $green;
+  }
+
+  .error {
+    background-color: $red;
+    &:hover{
+      background-color: $green;
+    }
+  }
+
+  .warning {
+    background-color: $orange;
+  }
